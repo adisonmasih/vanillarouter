@@ -37,9 +37,9 @@ Vanilla Router Gives You Three Initialization Options:
 
 ```
 const router = new VanillaRouter({
-	useTopBar: true,
-	topBarConfig: 'none',
-	isProduction: true,
+  useTopBar: true,
+  topBarConfig: 'none',
+  isProduction: true,
 })
 ```
 ## Structure
@@ -55,9 +55,9 @@ The `title` attribute of the `<routable>` element will become the `<title>` of t
 
 ```
 <body>
-	<routable title="Enter Page title here">
-		Your Content Here...
-	</routable>
+  <routable title="Enter Page title here">
+    Your Content Here...
+  </routable>
 </body>
 ```
 
@@ -65,9 +65,9 @@ Though You Can include as Many Scripts inside the `<routable>` element, they wil
 
 ```
 <routable>
-	<script>let x</script> // These Scripts
-	<script>let y</script> // Will Stay Inside
-	<script>let z</script> // The <routable> Element
+  <script>let x</script> // These Scripts
+  <script>let y</script> // Will Stay Inside
+  <script>let z</script> // The <routable> Element
 </routable>
 ```
 
@@ -75,8 +75,8 @@ But This Behaviour Can Be Overriden For `one` script element by providing it wit
 
 ```
 <routable script="myScript">
-	<script id="myScript">let mine = "yours!"</script> 
-	// This Script will be Appended to the end of the body when routed to the this page.
+  <script id="myScript">let mine = "yours!"</script> 
+  // This Script will be Appended to the end of the body when routed to the this page.
 </routable>
 ```
 
@@ -113,7 +113,7 @@ if you don't pass the `title` attribute in the `<routable>` element, you can pas
 
 ```
 <routable>
-	I ain't got no title!
+  I ain't got no title!
 </routable>
 ```
 ```
@@ -127,10 +127,10 @@ Although, whatever you place outside the `<routable>` element won't be shown whi
 
 ```
 <routable>
-	This will be shown while Routing!
-	<direct>
-		This Won't Be Shown While Routing!
-	</direct>
+  This will be shown while Routing!
+  <direct>
+    This Won't Be Shown While Routing!
+  </direct>
 </routable>
 ```
 
@@ -182,7 +182,7 @@ Currently `window.onpopstate` is not handled by the router. it is prone to the n
 
 ```
 router.handlePopState = () => {
-	// your code here
+  // your code here
 }
 ```
 

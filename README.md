@@ -15,16 +15,18 @@ It Is In Rapid Development & Bugs Can be Seen.
 ## Including
 Include Vanilla Router By Adding Either The File, Or The CDN To Your **`<Head>`** Tag
 > **NOTE:** It is important to include the CDN / File Only In Your **Head** Tag
-```<head>
+```
+<head>
 	<title>...</title>
 	<script src="./vanillarouter.min.js"></script>
 	// Or
-	<script src="https://cdn.jsdelivr.net/gh/Adison-Masih/vanillarouter@main/vanillarouter.min.js"></script>
+	<script src="[JSDELIVRURL]"></script>
 </head>
 ```
 ## Initializing
 Initialize A New VanillaRouter Instance Like This:
-```const router = new VanillaRouter()
+```
+const router = new VanillaRouter()
 ```
 ### Options
 Vanilla Router Gives You Three Initialization Options:

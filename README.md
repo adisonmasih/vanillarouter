@@ -17,10 +17,10 @@ Include Vanilla Router By Adding Either The File, Or The CDN To Your **`<Head>`*
 > **NOTE:** It is important to include the CDN / File Only In Your **Head** Tag
 ```
 <head>
-	<title>...</title>
-	<script src="./vanillarouter.min.js"></script>
-	// Or
-	<script src="[JSDELIVRURL]"></script>
+  <title>...</title>
+  <script src="./vanillarouter.min.js"></script>
+  // Or
+  <script src="https://cdn.jsdelivr.net/gh/Adison-Masih/vanillarouter@main/vanillarouter.min.js"></script>
 </head>
 ```
 ## Initializing

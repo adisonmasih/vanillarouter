@@ -178,7 +178,7 @@ router.home() // redirects to absolute path
 ```
 
 ### Handling Back And Forward Buttons (Pop State)
-Currently `window.onpopstate` is not handled by the router. it is prone to the next update. but if you want to extend the library by adding your own handlers, you can do it so by:
+Currently `Back`  And `Forward` Buttons are not handled by the router. it is prone to the next update. but if you want to extend the library by adding your own handlers, you can do it so by:
 
 ```
 router.handlePopState = () => {
@@ -186,4 +186,4 @@ router.handlePopState = () => {
 }
 ```
 
-`router.handlePopState` handles `window.onpopstate` and is set within the router, so don't need to attach the `window.onpopstate` handler seperately.
+`router.handlePopState` is executed when `window.onpopstate` occurs and is set by the router, so don't need to attach the `window.onpopstate` handler seperately so that you can extend the library by ease.

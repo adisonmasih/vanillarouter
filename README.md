@@ -96,7 +96,7 @@ It takes three parameters:
 * `component` - optional
 * `title`  - optional
 
-The `url` parameter will navigate to the url you pass in here. how this works is, it fetches the `url` you give parse it, then take the contents from the `routable` element, do some tweaks and display the results blazing fast!
+The `url` parameter will navigate to the url you pass in here. how this works is, it fetches the `url` you give, parses it, then takes the **valid** contents from the `routable` element, do some tweaks and displays the results blazing fast!
 
 ```
 const router = new VanillaRouter({...options})

@@ -1,3 +1,4 @@
+
 # VanillaRouter
 Vanilla Router Is A Open-Source Library That Allows You To Implement No-Reload Page Routing using `history.pushState`, Support For HTML Components & Their Inclusion With In-Built Support For [TopBar.js](https://github.com/buunguyen/topbar).
 
@@ -15,7 +16,7 @@ It Is In Rapid Development & Bugs Can be Seen.
 ## Including
 Include Vanilla Router By Adding Either The File, Or The CDN To Your **`<Head>`** Tag
 > **NOTE:** It is important to include the CDN / File Only In Your **Head** Tag
-```
+``` html
 <head>
   <title>...</title>
   <script src="./vanillarouter.min.js"></script>
@@ -25,7 +26,7 @@ Include Vanilla Router By Adding Either The File, Or The CDN To Your **`<Head>`*
 ```
 ## Initializing
 Initialize A New VanillaRouter Instance Like This:
-```
+``` js
 const router = new VanillaRouter()
 ```
 ### Options
@@ -35,7 +36,7 @@ Vanilla Router Gives You Three Initialization Options:
 - `topBarConfig` is used to configure the `topbar` package. if not provided (or provided `none`), default configuration is used.
 - `isProduction` can be used to avoid any errors that happen during runtime. default value is `false`. if set to `true`,  no errors will be thrown even when there are any (only Valid for VanillaRouter Package).
 
-```
+``` js
 const router = new VanillaRouter({
   useTopBar: true,
   topBarConfig: 'none',
@@ -53,7 +54,7 @@ This Tag accepts three `html attributes`:
 
 The `title` attribute of the `<routable>` element will become the `<title>` of the page when  **ROUTED TO**.
 
-```
+``` html
 <body>
   <routable title="Enter Page title here">
     Your Content Here...
@@ -63,7 +64,7 @@ The `title` attribute of the `<routable>` element will become the `<title>` of t
 
 Though You Can include as Many Scripts inside the `<routable>` element, they will only stay inside the `<routable>` element itself and will not be appended to the `<body>`.
 
-```
+``` html
 <routable>
   <script>let x</script> // These Scripts
   <script>let y</script> // Will Stay Inside
@@ -73,7 +74,7 @@ Though You Can include as Many Scripts inside the `<routable>` element, they wil
 
 But This Behaviour Can Be Overriden For `one` script element by providing it with a unique `id` attribute and then passing the value of `id` attribute to the `script` attribute of the `<routable>` element
 
-```
+``` html
 <routable script="myScript">
   <script id="myScript">let mine = "yours!"</script> 
   // This Script will be Appended to the end of the body when routed to the this page.
@@ -84,7 +85,7 @@ As for the `script`, `css` attribute has the same story, add an id to the style 
 
 ### Absolute Path
 If your application is in a directory or some nested url, you might need to consider absolute paths. it is by default set to `/`. you can change it globally by:
-```
+``` js
 router.setABSPath('/your/nested/url')
 ```
 
@@ -98,25 +99,25 @@ It takes three parameters:
 
 The `url` parameter will navigate to the url you pass in here. how this works is, it fetches the `url` you give, parses it, then takes the **valid** contents from the `routable` element, do some tweaks and displays the results blazing fast!
 
-```
+``` js
 const router = new VanillaRouter({...options})
 router.to("/your-url-here")
 ```
 
 if you want to navigate to a `url` but want to fetch the contents from a different url, you can pass it as the `component`.
 
-```
+``` js
 router.to('/a-different-url', '/real-url')
 ```
 
 if you don't pass the `title` attribute in the `<routable>` element, you can pass it in the `title` parameter of this function. it will behave the same way and both work on fallback system.
 
-```
+``` html
 <routable>
   I ain't got no title!
 </routable>
 ```
-```
+``` js
 router.to("/url", "/component", "I've Got You Covered!")
 ```
 
@@ -125,7 +126,7 @@ router.to("/url", "/component", "I've Got You Covered!")
 ### The `<direct>` Element
 Although, whatever you place outside the `<routable>` element won't be shown while routing, though it will require you to rewrite the page 2 times. which is pretty difficult according to me (opinions differ). for that purpose you have the `<direct>` element. it must be placed inside the `<routable>` tag, whatever you place inside the `<direct>` tag, in-spite of being inside `<routable>` will not be rendered while routing and only renderes when the page is directly visited.
 
-```
+``` html
 <routable>
   This will be shown while Routing!
   <direct>
@@ -143,14 +144,14 @@ It stands for `Routable Link`. it is a `<a href>` tag but in a `routed way 😉`
 It Has Two Different Attributes for different use cases.
 
 * `href` - the value of this will be the url routed to.
-```
+``` html
 <rlink href="/your-url-here">Click Here!</rlink>
 ```
 * `abshref` - it prepends the `absolute path` of your application to the provided value.
-```
+``` js
 router.setABSPath('/nested/dir')
 ```
-```
+``` html
 <rlink abshref="/your-url-here">Click Here!</rlink> // returns abspath + provided value
 ```
 
@@ -163,7 +164,7 @@ Then Place your `HTML ONLY` Contents inside it.
 
 To Access with from another page use the `<drop>` element with the attribute `name` providing the filename of the drop without the `.drop` extension.
 
-```
+``` html
 <drop name="navbar" />
 ```
 
@@ -173,14 +174,14 @@ if you wan to use `history.replaceState` instead of `history.pushState`, you can
 ### Router `home` method
 If you want to route to the `abspath` of the router, which is `/` by default, you can use the `router.home` method. it takes no arguments.
 
-```
+``` js
 router.home() // redirects to absolute path
 ```
 
 ### Handling Back And Forward Buttons (Pop State)
 Currently `Back`  And `Forward` Buttons are not handled by the router. it is prone to the next update. but if you want to extend the library by adding your own handlers, you can do it so by:
 
-```
+``` js
 router.handlePopState = () => {
   // your code here
 }

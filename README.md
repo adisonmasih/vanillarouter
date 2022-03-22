@@ -120,7 +120,7 @@ if you don't pass the `title` attribute in the `<routable>` element, you can pas
 router.to("/url", "/component", "I've Got You Covered!")
 ```
 
-> **Bonus**: If You Have Set the `useTopBar` to `true` when initializing the router instance, you will see the bar on the top animating when you start to navigate and fades out when the results are displayed.
+> **Bonus**: If You Have Set the `useTopBar` to `true` while initializing the router instance, you will see the bar on the top animating when you start to navigate and fades out when the results are displayed.
 
 ### The `<direct>` Element
 Although, whatever you place outside the `<routable>` element won't be shown while routing, though it will require you to rewrite the page 2 times. which is pretty difficult according to me (opinions differ). for that purpose you have the `<direct>` element. it must be placed inside the `<routable>` tag, whatever you place inside the `<direct>` tag, in-spite of being inside `<routable>` will not be rendered while routing and only renderes when the page is directly visited.
